@@ -1,15 +1,17 @@
 section .text
-global _ft_strcmp
+global ft_strcmp
 
-_ft_strcmp:	xor	rax,	rax
+ft_strcmp:	xor		rax,	rax
+			xor		rdx,	rdx
+			xor		rcx,	rcx
 
-.loop	mov		dl,	byte[rdi + rax]
-		sub		dl,	byte[rsi + rax]
-		jnz		.end
-		cmp		byte[rdi + rax], 0
-		je		.end
-		inc		rax
-		jmp		.loop
-
-.end	mov		rax, dl
-		ret
+.loop		mov		dl,	byte[rdi + rax]
+			mov		cl,	byte[rsi + rax]
+			sub		rdx, rcx
+			jnz		.end
+			cmp		byte[rdi + rax], 0
+			je		.end
+			inc		rax
+			jmp		.loop
+.end		mov		rax, rdx 
+			ret
