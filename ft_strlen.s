@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_strlen.s                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tmurakam <tmurakam@student.42tokyo.jp>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/12/13 01:48:40 by tmurakam          #+#    #+#              #
+#    Updated: 2020/12/13 01:48:56 by tmurakam         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 section .text
 global ft_strlen									; discrive the name of function(when call ft_strlen, start the label)
 
