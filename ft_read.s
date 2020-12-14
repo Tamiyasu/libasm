@@ -8,7 +8,7 @@ ft_read:	mov		rax, 0 ; sytem call id - read : 0
 			jl		.error
 			ret
 .error:		push	rax
-			call __errno_location
+			call __errno_location wrt ..plt
 			mov		rdx,	rax
 			pop		rax
 			imul	rax,	-1

@@ -6,10 +6,10 @@ extern ft_strcpy
 extern __errno_location
 
 ft_strdup:	push	rdi			; src -> stack
-			call	ft_strlen	; rax is the len ob src(rdi)
+			call	ft_strlen	; rax is the len of src(rdi)
 			mov		rdi, rax	; preper rdi (malloc 1st arg)
 			inc		rdi			; malloc size = strlen + 1
-			call	malloc
+			call	malloc wrt ..plt
 			cmp		rax, 0		; if fail
 			jle		.end		; goto end
 			mov		rdi, rax	; malloc rax is the 1st arg of strcpy
