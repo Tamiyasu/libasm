@@ -6,7 +6,7 @@
 /*   By: tmurakam <tmurakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 01:49:14 by tmurakam          #+#    #+#             */
-/*   Updated: 2020/12/14 17:46:50 by tmurakam         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:48:48 by tmurakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int main()
 	printf("   strlen : ret : %0zu\n", strlen(longs));
 	printf("ft_strlen : ret : %0zu\n", ft_strlen(longd));
 	printf("   strlen : ret : %0zu\n", strlen(longd));
-	printf("ft_strlen : ret : %0zu\n", ft_strlen(NULL));
-	printf("   strlen : ret : %0zu\n", strlen(NULL));
+	//printf("ft_strlen : ret : %0zu\n", ft_strlen(NULL));
+	//printf("   strlen : ret : %0zu\n", strlen(NULL));
 
 	printf("\nTEST --- ft_strcpy vs strcpy\n");
 	printf("ft_strcpy : ret : %p [%s]\n", ft_strcpy(d1, s1), d1);
