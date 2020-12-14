@@ -1,10 +1,9 @@
 section .text
-global ft_write
+global ft_read
 extern __errno_location
 
-ft_write:	mov		rax, 1 ; sytem call id - write : 1
+ft_read:	mov		rax, 0 ; sytem call id - read : 0
 			syscall
-;			jc		.error
 			cmp		rax, 0
 			jl		.error
 			ret

@@ -18,8 +18,8 @@ SRCS = ft_strlen.s
 SRCS += ft_strcpy.s
 SRCS += ft_strcmp.s
 SRCS += ft_write.s
-#SRCS += ft_read.s
-#SRCS += ft_strdup.s
+SRCS += ft_read.s
+SRCS += ft_strdup.s
 OBJS = ${SRCS:%.s=%.o}
 
 .s.o:
