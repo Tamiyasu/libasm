@@ -6,7 +6,7 @@
 /*   By: tmurakam <tmurakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 01:49:14 by tmurakam          #+#    #+#             */
-/*   Updated: 2020/12/14 17:52:36 by tmurakam         ###   ########.fr       */
+/*   Updated: 2020/12/14 21:10:04 by tmurakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main()
 	printf("ft_strcpy : ret : %p [%s]\n", ft_strcpy(d1, s3), d1);
 	printf("   strcpy : ret : %p [%s]\n",    strcpy(d2, s3), d2);
 	printf("ft_strcpy : ret : %p [%s]\n", ft_strcpy(d2, s4), d2);
-	printf("   strcpy : ret : %p [%s]\n",    strcpy(d1, s4), d2);
+	printf("   strcpy : ret : %p [%s]\n",    strcpy(d1, s4), d1);
 
 	printf("\nTEST --- ft_strcmp vs strcmp\n");
 	printf("ft_strcmp : ret : %0d\n", ft_strcmp(s1, s2));
@@ -107,12 +107,12 @@ int main()
 	perror("   read - ");
 
 	printf("\nTEST --- ft_strdup vs strdup\n");
-	printf("ft_strdup : ret : %zd : [%s]\n", dft = ft_strdup(s1), dft);
-	printf("   strdup : ret : %zd : [%s]\n", dor =    strdup(s1), dor);
+	printf("ft_strdup : ret : %p : [%s]\n", (dft = ft_strdup(s1)), dft);
+	printf("   strdup : ret : %p : [%s]\n", (dor =    strdup(s1)), dor);
 	free(dft);
 	free(dor);
-	printf("ft_strdup : ret : %zd : diff : (%zu)\n", dft = ft_strdup(longs), strcmp(dft, longs));
-	printf("   strdup : ret : %zd : diff : (%zu)\n", dor =    strdup(longs), strcmp(dor, longs));
+	printf("ft_strdup : ret : %p : diff : (%zu)\n", (dft = ft_strdup(longs)), strcmp(dft, longs));
+	printf("   strdup : ret : %p : diff : (%zu)\n", (dor =    strdup(longs)), strcmp(dor, longs));
 	free(dft);
 	free(dor);
 	
