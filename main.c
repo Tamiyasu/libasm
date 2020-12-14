@@ -6,7 +6,7 @@
 /*   By: tmurakam <tmurakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 01:49:14 by tmurakam          #+#    #+#             */
-/*   Updated: 2020/12/14 17:48:48 by tmurakam         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:52:36 by tmurakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int main()
 	char *s5 = "te\xfc";
 	char d1[100];
 	char d2[100];
-	char *d;
+	char *dft;
+	char *dor;
 	char longs[L];
 	char longd[L];
 	
@@ -106,14 +107,14 @@ int main()
 	perror("   read - ");
 
 	printf("\nTEST --- ft_strdup vs strdup\n");
-	printf("ft_strdup : ret : %zd : [%s]\n", d = ft_strdup(s1), d);
-	free(d);
-	printf("   strdup : ret : %zd : [%s]\n", d =    strdup(s1), d);
-	free(d);
-	printf("ft_strdup : ret : %zd : (%zu)\n", d = ft_strdup(longs), strcmp(d, longs));
-	free(d);
-	printf("   strdup : ret : %zd : (%zu)\n", d =    strdup(longs), strcmp(d, longs));
-	free(d);	
+	printf("ft_strdup : ret : %zd : [%s]\n", dft = ft_strdup(s1), dft);
+	printf("   strdup : ret : %zd : [%s]\n", dor =    strdup(s1), dor);
+	free(dft);
+	free(dor);
+	printf("ft_strdup : ret : %zd : diff : (%zu)\n", dft = ft_strdup(longs), strcmp(dft, longs));
+	printf("   strdup : ret : %zd : diff : (%zu)\n", dor =    strdup(longs), strcmp(dor, longs));
+	free(dft);
+	free(dor);
 	
 	return (0);
 }
