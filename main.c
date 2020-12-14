@@ -6,7 +6,7 @@
 /*   By: tmurakam <tmurakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 01:49:14 by tmurakam          #+#    #+#             */
-/*   Updated: 2020/12/14 21:14:26 by tmurakam         ###   ########.fr       */
+/*   Updated: 2020/12/14 21:16:34 by tmurakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "libasm.h"
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #define L 1024
 int main()
