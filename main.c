@@ -6,7 +6,7 @@
 /*   By: tmurakam <tmurakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 01:49:14 by tmurakam          #+#    #+#             */
-/*   Updated: 2020/12/13 01:49:17 by tmurakam         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:46:50 by tmurakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include <unistd.h>
 
+#define L 1024
 int main()
 {
 	char *s1 = "test";
@@ -24,10 +25,23 @@ int main()
 	char *s5 = "te\xfc";
 	char d1[100];
 	char d2[100];
+	char *d;
+	char longs[L];
+	char longd[L];
+	
+	memset(longs, 0, L);
+	memset(longs, 'A', L - 1);
+	memset(longd, 0, L);
 
 	printf("TEST --- ft_strlen vs strlen\n");
 	printf("ft_strlen : ret : %0zu\n", ft_strlen(s1));
 	printf("   strlen : ret : %0zu\n", strlen(s1));
+	printf("ft_strlen : ret : %0zu\n", ft_strlen(longs));
+	printf("   strlen : ret : %0zu\n", strlen(longs));
+	printf("ft_strlen : ret : %0zu\n", ft_strlen(longd));
+	printf("   strlen : ret : %0zu\n", strlen(longd));
+	printf("ft_strlen : ret : %0zu\n", ft_strlen(NULL));
+	printf("   strlen : ret : %0zu\n", strlen(NULL));
 
 	printf("\nTEST --- ft_strcpy vs strcpy\n");
 	printf("ft_strcpy : ret : %p [%s]\n", ft_strcpy(d1, s1), d1);
@@ -90,6 +104,16 @@ int main()
 	perror("ft_read - ");
 	printf("   read : ret : %zd\n",    read(3, d2, ft_strlen(s1)));
 	perror("   read - ");
+
+	printf("\nTEST --- ft_strdup vs strdup\n");
+	printf("ft_strdup : ret : %zd : [%s]\n", d = ft_strdup(s1), d);
+	free(d);
+	printf("   strdup : ret : %zd : [%s]\n", d =    strdup(s1), d);
+	free(d);
+	printf("ft_strdup : ret : %zd : (%zu)\n", d = ft_strdup(longs), strcmp(d, longs));
+	free(d);
+	printf("   strdup : ret : %zd : (%zu)\n", d =    strdup(longs), strcmp(d, longs));
+	free(d);	
 	
 	return (0);
 }
